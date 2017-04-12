@@ -8,7 +8,7 @@ class GameWindow < Hasu::Window
     @background_sprite = Gosu::Image.new(self, 'images/pokemon2.png', true)
     @koala_sprite = Gosu::Image.new(self, 'images/pika2.png', true)
     @enemy_sprite = Gosu::Image.new(self, 'images/rattatta1.png', true)
-    @flag_sprite = Gosu::Image.new(self, 'images/flag.png', true)
+    @flag_sprite = Gosu::Image.new(self, 'images/chateau3.png', true)
     @font = Gosu::Font.new(self, Gosu::default_font_name, 30)
     @flag = {x: WINDOW_X - SPRITE_SIZE, y: WINDOW_Y - SPRITE_SIZE}
     @music = Gosu::Song.new(self, "musics/pokemon.wav")
@@ -52,7 +52,7 @@ class GameWindow < Hasu::Window
   def reset
     @high_score = 0
     @enemies = []
-    @speed = 3
+    @speed = 2
     if @music
       @music.stop
       @music.play
@@ -61,7 +61,7 @@ class GameWindow < Hasu::Window
   end
 
   def reinit
-    @speed += 1
+    @speed += 3
     @player = {x: 0, y: 0}
     @enemies.push({x: 500 + rand(100), y: 200 + rand(300)})
     high_score
